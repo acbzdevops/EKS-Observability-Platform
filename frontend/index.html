@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>EKS Observability Platform</h1>
+    <p id="status">Connecting to Backend...</p>
+    <script>
+        fetch('/api/status')
+            .then(res => res.json())
+            .then(data => document.getElementById('status').innerText = data.status);
+    </script>
+</body>
+</html>

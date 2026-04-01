@@ -1,9 +1,16 @@
-name: MyFirstDevOpsAction
-on: [push] # Jab bhi code push karoge, ye chalega
+name: Docker Build Test
+
+on: [push]
 
 jobs:
-  test-job:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Say Hello
-        run: echo "Bhari DevOps Practice Shuru Ho Gayi Hai!"
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+* run: docker build -t my-test-image:latest .
+
+      - name: Run Docker Container
+        run: docker run my-test-image:latest

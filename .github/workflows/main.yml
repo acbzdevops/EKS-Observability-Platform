@@ -1,0 +1,9 @@
+name: MyFirstDevOpsAction
+on: [push] # Jab bhi code push karoge, ye chalega
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Bhari DevOps Practice Shuru Ho Gayi Hai!"
